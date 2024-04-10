@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.melanyjimenez.mealsApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "scheme": "mealsApp",
+    "extra": {
+      "eas": {
+        "projectId": "a818d594-ffd3-4676-ad82-25b8d7ba5524"
+      }
     }
   }
 }
