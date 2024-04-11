@@ -1,18 +1,19 @@
 // Inicio.jsx
+
 import React from 'react';
 import { View, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Header from './Header';
+import Sidebar from './Sidebar'; // Importa el componente Sidebar
 
 const RandomFoods = require('../assets/ImagesApp/RandomFood.png');
 const MealsBLetter = require('../assets/ImagesApp/MealsBLetter.png');
 const MealsBCountry = require('../assets/ImagesApp/MealsBCountry.png');
 const MealsBId = require('../assets/ImagesApp/MealsBId.png');
 
-
-const Inicio = ({ navigation }) => {
+const Inicio = ({ navigation, showSidebar }) => { 
   return (
     <View style={{ flex: 1 }}>
-      <Header navigation={navigation} />
+      {showSidebar && <Sidebar navigation={navigation} />} 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <TouchableOpacity
           style={styles.buttonContainer}
@@ -43,6 +44,7 @@ const Inicio = ({ navigation }) => {
           </View>
         </TouchableOpacity>
       </ScrollView>
+      
     </View>
   );
 };

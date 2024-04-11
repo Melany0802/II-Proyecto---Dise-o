@@ -6,7 +6,7 @@ import Header from './Header';
 const MealsByCountry = ({ navigation }) => {
   return (
     <View>
-      <Header navigation={navigation} />
+      
       <Text>Meals By Country</Text>
     </View>
   );

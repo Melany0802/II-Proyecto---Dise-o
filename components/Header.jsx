@@ -1,46 +1,36 @@
+// En Header.jsx
 
 import React from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 const MenuIcon = require('../assets/ImagesApp/menu.png');
 const CenterIcon = require('../assets/ImagesApp/Logo.png');
 const RightIcon = require('../assets/ImagesApp/Search.png');
 
-const Header = ({ navigation }) => {
-  const handleLeftPress = () => {
-    // Acción cuando se presiona el icono del menú
-    navigation.toggleDrawer(); // Ejemplo de abrir un drawer
-  };
-
-  const handleRightPress = () => {
-    // Acción cuando se presiona el icono del lado derecho
-    // Aquí puedes agregar el manejo de abrir la página de búsqueda u otra acción
-  };
-
+const Header = ({ toggleSidebar }) => {
   return (
-    <View style={styles.appBar}>
-      <TouchableOpacity style={styles.iconContainer} onPress={handleLeftPress}>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.iconContainer} onPress={toggleSidebar}>
         <Image source={MenuIcon} style={styles.icon} />
       </TouchableOpacity>
       <View style={styles.titleContainer}>
         <Image source={CenterIcon} style={styles.titleIcon} />
       </View>
-      <TouchableOpacity style={styles.iconContainer} onPress={handleRightPress}>
+      <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Search')}>
         <Image source={RightIcon} style={styles.icon} />
       </TouchableOpacity>
     </View>
   );
 };
 
-const styles = {
-  appBar: {
+const styles = StyleSheet.create({
+  container: {
     flexDirection: 'row',
     height: 50,
     backgroundColor: '#A6C30D',
     alignItems: 'center',
-    justifyContent: 'space-between',
     paddingHorizontal: 10,
-    marginTop:40,
+    marginTop: 40,
   },
   iconContainer: {
     padding: 5,
@@ -57,6 +47,6 @@ const styles = {
     width: 40,
     height: 40,
   },
-};
+});
 
 export default Header;
