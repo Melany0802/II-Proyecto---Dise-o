@@ -7,7 +7,7 @@ import Sidebar from './Sidebar';
 const RandomFood = ({ navigation, showSidebar }) => {
   return (
     <View>
-            {showSidebar && <Sidebar navigation={navigation} />} 
+        {showSidebar && <Sidebar navigation={navigation} />} 
       <Text>Hola</Text>
     </View>
   );

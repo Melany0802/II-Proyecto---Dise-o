@@ -3,14 +3,14 @@ import { Text, View, Image } from 'react-native';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
-const ListOfCategories = ({ navigation, showSidebar }) => {
+const ListFoodCategories = ({ navigation, showSidebar }) => {
   return (
     <View>
               {showSidebar && <Sidebar navigation={navigation} />} 
 
-      <Text>List of categories</Text>
+      <Text>List Food categories</Text>
     </View>
   );
 };
 
-export default ListOfCategories;
+export default ListFoodCategories;

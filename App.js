@@ -11,6 +11,10 @@ import MealsByCountry from './components/MealsByCountry';
 import MealsById from './components/MealsById';
 import Sidebar from './components/Sidebar'; // Importa el componente Sidebar
 import ListOfCategories from './components/ListOfCategories';
+import ListOfCountries from './components/ListOfCountries';
+import ListOfIngredients from './components/ListOfIngredients';
+import ListFoodCategories from './components/ListFoodCategories';
+
 
 const Stack = createStackNavigator();
 
@@ -20,6 +24,8 @@ export default function App() {
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
+
+  
 
   return (
     <NavigationContainer>
@@ -31,11 +37,31 @@ export default function App() {
         <Stack.Screen name="RandomFood" options={{ headerShown: false }}>
           {(props) => <RandomFood {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
-        <Stack.Screen name="MealsByLetter" component={MealsByLetter} options={{ headerShown: false }} />
-        <Stack.Screen name="MealsByCountry" component={MealsByCountry} options={{ headerShown: false }} />
-        <Stack.Screen name="MealsById" component={MealsById} options={{ headerShown: false }} />
+        <Stack.Screen name="MealsByLetter" options={{ headerShown: false }}>
+          {(props) => <MealsByLetter {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="MealsByCountry" options={{ headerShown: false }}>
+          {(props) => <MealsByCountry {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="MealsById" options={{ headerShown: false }}>
+          {(props) => <MealsById {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
 
-        <Stack.Screen name="ListOfCategories" component={ListOfCategories} options={{ headerShown: false }} />
+
+        <Stack.Screen name="ListOfCategories" options={{ headerShown: false }}>
+          {(props) => <ListOfCategories {...props} showSidebar={showSidebar}/>}
+        </Stack.Screen>
+        <Stack.Screen name="ListOfCountries" options={{ headerShown: false }}>
+          {(props) => <ListOfCountries {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="ListOfIngredients" options={{ headerShown: false }}>
+          {(props) => <ListOfIngredients {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="ListFoodCategories" options={{ headerShown: false }}>
+          {(props) => <ListFoodCategories {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        
+
       </Stack.Navigator>
      
     </NavigationContainer>

@@ -6,21 +6,25 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 const Sidebar = ({ navigation }) => {
   const handleNavigation = (screenName) => {
     navigation.navigate(screenName);
+    
   };
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={() => handleNavigation('Inicio')} style={styles.button}>
+        <Text style={styles.buttonText}>Home</Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => handleNavigation('ListOfCategories')} style={styles.button}>
         <Text style={styles.buttonText}>List Of Categories</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleNavigation('MealsByLetter')} style={styles.button}>
-        <Text style={styles.buttonText}>Meals By Letter</Text>
+      <TouchableOpacity onPress={() => handleNavigation('ListOfCountries')} style={styles.button}>
+        <Text style={styles.buttonText}>List Of Countries</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleNavigation('MealsByCountry')} style={styles.button}>
-        <Text style={styles.buttonText}>Meals By Country</Text>
+      <TouchableOpacity onPress={() => handleNavigation('ListOfIngredients')} style={styles.button}>
+        <Text style={styles.buttonText}>List Of Ingredients</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleNavigation('MealsById')} style={styles.button}>
-        <Text style={styles.buttonText}>Meals By ID</Text>
+      <TouchableOpacity onPress={() => handleNavigation('ListFoodCategories')} style={styles.button}>
+        <Text style={styles.buttonText}>List Food Categories</Text>
       </TouchableOpacity>
     </View>
   );
