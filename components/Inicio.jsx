@@ -23,21 +23,21 @@ const Inicio = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => navigation.navigate('RandomFood')}>
+          onPress={() => navigation.navigate('MealsByLetter')}>
           <View style={styles.buttonWrapper}>
             <Image source={MealsBLetter} style={styles.buttonImage} />
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => navigation.navigate('RandomFood')}>
+          onPress={() => navigation.navigate('MealsByCountry')}>
           <View style={styles.buttonWrapper}>
             <Image source={MealsBCountry} style={styles.buttonImage} />
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => navigation.navigate('RandomFood')}>
+          onPress={() => navigation.navigate('MealsById')}>
           <View style={styles.buttonWrapper}>
             <Image source={MealsBId} style={styles.buttonImage} />
           </View>
