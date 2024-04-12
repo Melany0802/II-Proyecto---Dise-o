@@ -24,7 +24,7 @@ const Inicio = ({ navigation, showSidebar }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => navigation.navigate('MealsByLetter')}>
+          onPress={() => navigation.navigate('LettersPage')}>
           <View style={styles.buttonWrapper}>
             <Image source={MealsBLetter} style={styles.buttonImage} />
           </View>

@@ -1,3 +1,5 @@
+// En App.js
+
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,7 +14,8 @@ import ListOfCategories from './components/ListOfCategories';
 import ListOfCountries from './components/ListOfCountries';
 import ListOfIngredients from './components/ListOfIngredients';
 import ListFoodCategories from './components/ListFoodCategories';
-import IngredientDetail from './components/IngredientDetail'; // Importa el componente IngredientDetail
+import LettersPage from './components/LettersPage';
+import MealByLetterDetails from './components/MealByLetterDetails';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +25,8 @@ export default function App() {
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
+
+
 
   return (
     <NavigationContainer>
@@ -33,15 +38,26 @@ export default function App() {
         <Stack.Screen name="RandomFood" options={{ headerShown: false }}>
           {(props) => <RandomFood {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
-        <Stack.Screen name="MealsByLetter" options={{ headerShown: false }}>
-          {(props) => <MealsByLetter {...props} showSidebar={showSidebar} />}
-        </Stack.Screen>
         <Stack.Screen name="MealsByCountry" options={{ headerShown: false }}>
           {(props) => <MealsByCountry {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
         <Stack.Screen name="MealsById" options={{ headerShown: false }}>
           {(props) => <MealsById {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
+        <Stack.Screen name="MealsByLetter" options={{ headerShown: false }}>
+          {(props) => <MealsByLetter {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+
+
+        <Stack.Screen name="LettersPage" options={{ headerShown: false }}>
+          {(props) => <LettersPage {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="MealByLetterDetails" options={{ headerShown: false }}>
+          {(props) => <MealByLetterDetails {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+
+
+
 
         <Stack.Screen name="ListOfCategories" options={{ headerShown: false }}>
           {(props) => <ListOfCategories {...props} showSidebar={showSidebar} />}
@@ -57,11 +73,8 @@ export default function App() {
         </Stack.Screen>
 
 
-        <Stack.Screen name="IngredientDetail" options={{ headerShown: false }}>
-          {(props) => <IngredientDetail {...props} showSidebar={showSidebar} />}
-        </Stack.Screen>
+      </Stack.Navigator>
 
-       </Stack.Navigator>
     </NavigationContainer>
   );
 }
