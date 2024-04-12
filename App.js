@@ -1,5 +1,3 @@
-// En App.js
-
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,7 +12,7 @@ import ListOfCategories from './components/ListOfCategories';
 import ListOfCountries from './components/ListOfCountries';
 import ListOfIngredients from './components/ListOfIngredients';
 import ListFoodCategories from './components/ListFoodCategories';
-
+import IngredientDetail from './components/IngredientDetail'; // Importa el componente IngredientDetail
 
 const Stack = createStackNavigator();
 
@@ -24,8 +22,6 @@ export default function App() {
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
-
-  
 
   return (
     <NavigationContainer>
@@ -47,9 +43,8 @@ export default function App() {
           {(props) => <MealsById {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
 
-
         <Stack.Screen name="ListOfCategories" options={{ headerShown: false }}>
-          {(props) => <ListOfCategories {...props} showSidebar={showSidebar}/>}
+          {(props) => <ListOfCategories {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
         <Stack.Screen name="ListOfCountries" options={{ headerShown: false }}>
           {(props) => <ListOfCountries {...props} showSidebar={showSidebar} />}
@@ -60,10 +55,13 @@ export default function App() {
         <Stack.Screen name="ListFoodCategories" options={{ headerShown: false }}>
           {(props) => <ListFoodCategories {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
-        
 
-      </Stack.Navigator>
-     
+
+        <Stack.Screen name="IngredientDetail" options={{ headerShown: false }}>
+          {(props) => <IngredientDetail {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+
+       </Stack.Navigator>
     </NavigationContainer>
   );
 }
