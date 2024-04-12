@@ -14,6 +14,7 @@ import ListOfCategories from './components/ListOfCategories';
 import ListOfCountries from './components/ListOfCountries';
 import ListOfIngredients from './components/ListOfIngredients';
 import ListFoodCategories from './components/ListFoodCategories';
+import CategoryDetails from './components/CategoryDetails';
 
 
 const Stack = createStackNavigator();
@@ -45,6 +46,9 @@ export default function App() {
         </Stack.Screen>
         <Stack.Screen name="MealsById" options={{ headerShown: false }}>
           {(props) => <MealsById {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="CategoryDetails" options={{ headerShown: false }}>
+          {(props) => <CategoryDetails {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
 
 
