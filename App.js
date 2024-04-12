@@ -1,5 +1,3 @@
-// En App.js
-
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -17,6 +15,7 @@ import ListFoodCategories from './components/ListFoodCategories';
 import LettersPage from './components/LettersPage';
 import MealByLetterDetails from './components/MealByLetterDetails';
 import IngredientDetail from './components/IngredientDetail';
+import CategoryDetails from './components/CategoryDetails';
 
 
 const Stack = createStackNavigator();
@@ -59,6 +58,9 @@ export default function App() {
         </Stack.Screen>
         <Stack.Screen name="IngredientDetail" options={{ headerShown: false }}>
           {(props) => <IngredientDetail {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="CategoryDetails" options={{ headerShown: false }}>
+          {(props) => <CategoryDetails {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
 
 
