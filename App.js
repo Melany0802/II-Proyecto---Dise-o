@@ -14,7 +14,8 @@ import ListOfCategories from './components/ListOfCategories';
 import ListOfCountries from './components/ListOfCountries';
 import ListOfIngredients from './components/ListOfIngredients';
 import ListFoodCategories from './components/ListFoodCategories';
-
+import LettersPage from './components/LettersPage';
+import MealByLetterDetails from './components/MealByLetterDetails';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,7 @@ export default function App() {
     setShowSidebar(!showSidebar);
   };
 
-  
+
 
   return (
     <NavigationContainer>
@@ -37,19 +38,29 @@ export default function App() {
         <Stack.Screen name="RandomFood" options={{ headerShown: false }}>
           {(props) => <RandomFood {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
-        <Stack.Screen name="MealsByLetter" options={{ headerShown: false }}>
-          {(props) => <MealsByLetter {...props} showSidebar={showSidebar} />}
-        </Stack.Screen>
         <Stack.Screen name="MealsByCountry" options={{ headerShown: false }}>
           {(props) => <MealsByCountry {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
         <Stack.Screen name="MealsById" options={{ headerShown: false }}>
           {(props) => <MealsById {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
+        <Stack.Screen name="MealsByLetter" options={{ headerShown: false }}>
+          {(props) => <MealsByLetter {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+
+
+        <Stack.Screen name="LettersPage" options={{ headerShown: false }}>
+          {(props) => <LettersPage {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+        <Stack.Screen name="MealByLetterDetails" options={{ headerShown: false }}>
+          {(props) => <MealByLetterDetails {...props} showSidebar={showSidebar} />}
+        </Stack.Screen>
+
+
 
 
         <Stack.Screen name="ListOfCategories" options={{ headerShown: false }}>
-          {(props) => <ListOfCategories {...props} showSidebar={showSidebar}/>}
+          {(props) => <ListOfCategories {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
         <Stack.Screen name="ListOfCountries" options={{ headerShown: false }}>
           {(props) => <ListOfCountries {...props} showSidebar={showSidebar} />}
@@ -60,10 +71,10 @@ export default function App() {
         <Stack.Screen name="ListFoodCategories" options={{ headerShown: false }}>
           {(props) => <ListFoodCategories {...props} showSidebar={showSidebar} />}
         </Stack.Screen>
-        
+
 
       </Stack.Navigator>
-     
+
     </NavigationContainer>
   );
 }
